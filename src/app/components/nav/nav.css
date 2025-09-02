@@ -1,0 +1,12 @@
+/* Estilo base para todos los links del navbar */
+.nav-link {
+    color: var(--color-lilac); /* color inicial */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover: cambia color de texto y/o fondo */
+.nav-link:hover {
+    color: var(--color-pink);
+    background-color: var(--color-navy);
+    border-radius: 8px; /* opcional, para dar efecto pill */
+}

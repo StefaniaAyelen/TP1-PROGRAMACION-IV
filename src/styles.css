@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+
+html, body {
+    background-color: black;
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+}
+
+:root {
+    --color-lemon: #F9F871;
+    --color-pink: #F7C6E0;
+    --color-lilac: #B9AFFF;
+    --color-navy: #1F225C;
+}
+
+/* Fondos */
+.bg-lemon {
+    background-color: var(--color-lemon) !important;
+}
+
+.bg-pink {
+    background-color: var(--color-pink) !important;
+}
+
+.bg-lilac {
+    background-color: var(--color-lilac) !important;
+}
+
+.bg-navy {
+    background-color: var(--color-navy) !important;
+}
+
+/* Colores de texto */
+.text-lemon {
+    color: var(--color-lemon) !important;
+}
+
+.text-pink {
+    color: var(--color-pink) !important;
+}
+
+.text-lilac {
+    color: var(--color-lilac) !important;
+}
+
+.text-navy {
+    color: var(--color-navy) !important;
+}
+
