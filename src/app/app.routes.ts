@@ -16,10 +16,6 @@ export const routes: Routes = [
         component:Login
     },
     {
-        path:'nav',
-        component:Nav
-    },
-    {
         path: 'registro',
         component: Registro
     },
