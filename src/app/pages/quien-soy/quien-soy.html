@@ -1,1 +1,24 @@
-<p>quien-soy works!</p>
+<app-nav></app-nav>
+<div class="quien-soy">
+    <h1>¿Quién Soy?</h1>
+
+    @if (loading) { 
+        <p class="text-center">Cargando datos...</p> 
+    }
+    @if (errorMsg) { 
+        <p class="alert alert-danger" role="alert">{{ errorMsg }}</p> 
+    }
+
+    @if (user) {
+        <div class="card">
+            <img [src]="user.avatar_url" [alt]="user.login" class="avatar" />
+            <h2>{{ user.name || user.login }}</h2>
+            @if (user.bio) { 
+                <p><strong>Bio:</strong> {{ user.bio }}</p> 
+            }
+            <p><strong>Repos públicos:</strong> {{ user.public_repos }}</p>
+            <p><strong>Seguidores:</strong> {{ user.followers }} | <strong>Siguiendo:</strong> {{ user.following }}</p>
+            <p><a [href]="user.html_url" target="_blank" rel="noopener">Ver perfil en GitHub</a></p>
+    </div>
+    }
+</div>
