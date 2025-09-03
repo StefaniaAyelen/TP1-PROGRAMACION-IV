@@ -9,6 +9,7 @@ html, body {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     padding: 0;
+    color: white;
 }
 
 :root {
