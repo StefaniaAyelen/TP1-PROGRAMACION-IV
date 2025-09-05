@@ -8,13 +8,9 @@ export interface GitHubUser {
   avatar_url: string;
   html_url: string;
   bio: string | null;
-  company: string | null;
-  location: string | null;
-  blog: string;
   followers: number;
   following: number;
   public_repos: number;
-  created_at: string;
 }
 
 
@@ -25,8 +21,8 @@ export class Github {
   private base = 'https://api.github.com/users/'
   constructor(private http:HttpClient) {}
 
-  getUser(username: string): Observable<GitHubUser>{
-    return this.http.get<GitHubUser>(this.base + username);
+  getUser(username: string): Observable<GitHubUser>{ //El observable emite los datos de GitHubUser
+    return this.http.get<GitHubUser>(this.base + username); //mediante el observable puedo acceder a esos datos
   }
 
 }
