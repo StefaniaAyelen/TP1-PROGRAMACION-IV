@@ -14,7 +14,7 @@ export class QuienSoy implements OnInit {
   username: string = 'StefaniaAyelen';
   loading = true;
   errorMsg = '';
-  user: GitHubUser | null = null;
+  user: GitHubUser | null = null; //Declaro la propiedad como un objeto de GitHubUser o de tipo null.
 
   constructor(private github: Github, private change: ChangeDetectorRef){}
 
@@ -24,8 +24,8 @@ export class QuienSoy implements OnInit {
 
 
   cargarDatos(){
-    this.github.getUser(this.username).subscribe({
-      next: data => {
+    this.github.getUser(this.username).subscribe({ //  Subscribe es la forma para que el observable envie sus datos
+      next: data => { // Lo que pasa cuando llega el valor
         this.loading = false;
         this.user = data;
         this.change.detectChanges(); //Refresca la pagina para detectar cambios de variables.
