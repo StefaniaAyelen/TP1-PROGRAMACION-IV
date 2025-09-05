@@ -1,37 +1,51 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary bg-navy mx-auto navbar-dark ">
-    <div class="container-fluid">
-        <a class="navbar-brand text-lilac" >Sala de juegos</a>
+<nav class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    <!-- Brand -->
+    <a class="text-xl font-bold text-lilac">Sala de juegos</a>
 
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Botón hamburguesa (solo mobile) -->
+    <button
+      class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none"
+      type="button"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isOpen"
+    >
+      <span class="sr-only">Abrir menú</span>
+      <!-- Icono hamburguesa -->
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/registro">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/quienSoy">Quien Soy</a>
-                </li>
-            </ul>
-            <span class="navbar-text text-lilac">
-                Stefania Bianchi
-            </span>
-        </div>
+    <!-- Links (desktop) -->
+    <div class="hidden lg:flex lg:items-center lg:space-x-6">
+      <a routerLink="/home" class="hover:text-purple-300">Home</a>
+      <a routerLink="/login" class="hover:text-purple-300">Login</a>
+      <a routerLink="/registro" class="hover:text-purple-300">Registro</a>
+      <a routerLink="/quienSoy" class="hover:text-purple-300">Quien Soy</a>
     </div>
+
+    <!-- Texto final -->
+    <span class="hidden lg:block text-lilac">
+      Stefania Bianchi
+    </span>
+  </div>
+
+  <!-- Links (mobile) -->
+  
+  <div class="lg:hidden px-4 pt-2 pb-3 space-y-2 transition-all duration-300 ease-in-out overflow-hidden"
+  [class.max-h-0]="!isOpen" 
+  [class.max-h-96]="isOpen"> <!-- Class.algo permite activar o desactivar una clase en css, 
+  max-h declaramos el max-height cuando isOpen es false (se cierra) y cuando es true (abre) -->
+
+    <a routerLink="/home" class="block rounded-md px-3 py-2 hover:bg-gray-700">Home</a>
+    <a routerLink="/login" class="block rounded-md px-3 py-2 hover:bg-gray-700">Login</a>
+    <a routerLink="/registro" class="block rounded-md px-3 py-2 hover:bg-gray-700">Registro</a>
+    <a routerLink="/quienSoy" class="block rounded-md px-3 py-2 hover:bg-gray-700">Quien Soy</a>
+    <span class="block text-lilac">Stefania Bianchi</span>
+  </div>
 </nav>
