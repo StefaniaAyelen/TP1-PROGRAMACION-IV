@@ -12,7 +12,7 @@
     @if (user) {
         <div class="card">
             <img [src]="user.avatar_url" [alt]="user.login" class="avatar" />
-            <h2>{{ user.name || user.login }}</h2>
+            <h2>{{user.login }}</h2>
             @if (user.bio) { 
                 <p><strong>Bio:</strong> {{ user.bio }}</p> 
             }
